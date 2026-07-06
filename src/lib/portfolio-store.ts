@@ -26,10 +26,13 @@ export type SkillGroup = {
 export type TimelineEntry = {
   id: string;
   year: string;
+  startDate: string;
+  endDate: string;
   title: string;
   org: string;
   detail: string;
   kind: "work" | "cert" | "edu";
+  type: "Job" | "Training" | "Certificate" | "Education";
 };
 
 export type PortfolioData = {
@@ -72,7 +75,7 @@ const defaultProjects: Project[] = [
       "MongoDB (Indexed Collections)",
       "Payroll Reporting Job",
     ],
-    videoUrl: "",
+    videoUrl: "https://res.cloudinary.com/zeoypfid/video/upload/v1783311125/EMS_sucgbl.mp4",
   },
   {
     id: "store-mvcsn",
@@ -90,7 +93,7 @@ const defaultProjects: Project[] = [
       "Entity Framework (Unit of Work)",
       "SQL Server (Transactional)",
     ],
-    videoUrl: "",
+    videoUrl: "https://res.cloudinary.com/zeoypfid/video/upload/v1783310599/store_fxsvnp.mp4",
   },
   {
     id: "url-shortener",
@@ -107,7 +110,7 @@ const defaultProjects: Project[] = [
       "MongoDB (Short-code Index)",
       "301 Redirect + Analytics Log",
     ],
-    videoUrl: "",
+    videoUrl: "https://res.cloudinary.com/zeoypfid/video/upload/v1783309477/url_shortner_mx9quu.mp4",
   },
 ];
 
@@ -117,77 +120,88 @@ const defaultSkillGroups: SkillGroup[] = [
     id: "backend",
     label: "Backend Frameworks",
     icon: "boxes",
-    items: ["Node.js", "Express", ".NET Core", "Angular", "React", "Next.js"],
+    items: ["Node.js", "Express", ".NET Core", "Angular", "Linq", "React", "Entity Framework"],
   },
   {
     id: "db",
     label: "Database Systems",
     icon: "database",
-    items: ["MongoDB", "Mongoose", "SQL Server", "PostgreSQL", "Redis"],
+    items: ["MongoDB", "Mongoose", "SQL Server", "My Sql", "Redis"],
   },
   {
     id: "devops",
     label: "DevOps & Infrastructure",
     icon: "wrench",
-    items: ["REST APIs", "GraphQL", "Git", "Docker", "OAuth / JWT", "CI/CD"],
+    items: ["REST APIs", "Git", "Docker", "OAuth / JWT", "Clean Architecture", "Microservices", "CI/CD", "CQRS"],
   },
 ];
 
 const defaultTimeline: TimelineEntry[] = [
   {
     id: "t1",
-    year: "2023 — Present",
-    title: "Principal Backend Engineer",
-    org: "Meridian Systems",
-    detail:
-      "Lead architecture for a distributed analytics platform handling 12M+ daily events. Introduced event sourcing and CQRS patterns; reduced p99 latency by 62%.",
+    year: "2026",
+    startDate: "03/2026",
+    endDate: "05/2026",
+    title: "Backend Developer Intern",
+    org: "Syntecxhub",
     kind: "work",
+    type: "Job",
+    detail: "Engineered scalable RESTful APIs leveraging .NET Core ecosystems. Specialized in implementing robust backend patterns including server-side pagination, dynamic sorting, and multi-field filtering algorithms to optimize data retrieval pipelines. Architected secure authentication infrastructure utilizing JWT token validation, refresh tokens, stateful login/register workflows, and role-based access controls to safeguard data integrity and system scalability.",
   },
   {
     id: "t2",
-    year: "2020 — 2023",
-    title: "Senior Full-Stack Engineer",
-    org: "Northwind Digital",
-    detail:
-      "Modernized a legacy .NET Framework monolith into modular .NET 8 services. Owned identity, billing, and reporting domains across Angular and React clients.",
+    year: "2026",
+    startDate: "07/2026",
+    endDate: "08/2026",
+    title: "Mean Stack Trainee",
+    org: "National Telecommunication Institute (NTI)",
     kind: "work",
+    type: "Training",
+    detail: "Immersed in an intensive enterprise-grade training focusing on full-stack Javascript architecture using the MEAN/MERN stack. Built responsive data tables powered by Node.js and Angular/React, utilizing TypeScript for type-safe components. Developed advanced filtering, custom sorting, and complex CRUD operations coupled with granular authorization systems, secure privilege checking, and high-performance MongoDB schema indexing.",
   },
   {
     id: "t3",
-    year: "2018 — 2020",
-    title: "Software Engineer, Node.js",
-    org: "Atlas Labs",
-    detail:
-      "Built the MERN stack platform behind a fintech onboarding suite; implemented SOC 2 controls and hardened the API surface.",
-    kind: "work",
+    year: "2024 — 2026",
+    startDate: "10/2024",
+    endDate: "03/2026",
+    title: "Backend Mastery & Distributed Systems Course",
+    org: "Catalyst AI (Eng. Abdullah Hatem)",
+    kind: "cert",
+    type: "Certificate",
+    detail: "A comprehensive deep-dive into lower-level system engineering and production-grade software architectures. Mastered system design principles for distributed computing, microservices decoupling, and high-availability networks. Engineered optimized backend microservices utilizing Node.js, applied advanced data structures for memory efficiency, managed custom operating system interactions, and established production-ready code quality frameworks with automated testing strategies.",
   },
   {
     id: "t4",
-    year: "2019",
-    title: "Microsoft Certified: Azure Solutions Architect Expert",
-    org: "Microsoft",
-    detail: "Deep specialization in distributed systems, identity, and secure cloud workloads.",
+    year: "2025 — 2026",
+    startDate: "02/2025",
+    endDate: "06/2026",
+    title: "Full-Stack .NET Developer Diploma",
+    org: "IT Legend (Eng. Ali Shahin)",
     kind: "cert",
+    type: "Certificate",
+    detail: "An elite, project-driven specialization tracking modern enterprise application engineering. Mastered database design paradigms, transactional entity modeling, ASP.NET Core MVC, and Clean Architecture patterns. Scaled monolithic monoliths into distributed microservices architectures, implemented secure integrated payment pipelines, and gained expert capabilities in System Analysis—bridging client requirements into robust technological blueprints.",
   },
   {
     id: "t5",
-    year: "2014 — 2018",
-    title: "B.Sc. Computer Science",
-    org: "University of Toronto",
-    detail:
-      "Focus on distributed systems, database theory, and compilers. Graduated with high distinction.",
+    year: "2023 — 2027",
+    startDate: "09/2023",
+    endDate: "07/2027",
+    title: "Bachelor of Computer Science",
+    org: "Faculty of Computers and Information",
     kind: "edu",
+    type: "Education",
+    detail: "Formal academic foundation focusing heavily on software engineering methodologies, advanced algorithms, compiler design, data communication networks, cryptography, and application security principles. Bridge technical theory with real-world application paradigms across distributed systems.",
   },
 ];
 
 export const defaultData: PortfolioData = {
   profile: {
-    name: "Yousef Mohamed",
+    name: "Yousef Mohamed Marei Mahmoud",
     title: "Software Engineer | Node.js & .NET Developer | Full-Stack Web Applications",
     summary:
       "I design and ship enterprise-grade platforms across the Node.js (MEAN/MERN) and Microsoft .NET ecosystems — with a focus on database performance, distributed architecture, and maintainable code that outlives the sprint that shipped it.",
-    email: "hello@example.com",
-    linkedin: "https://linkedin.com",
+    email: "yousefmohamedmarei@gmail.com",
+    linkedin: "https://www.linkedin.com/in/yousef-mohamed-4668173a7?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     github: "https://github.com/YousefMohamedMareiMahmoudMadin",
   },
   heroHeadline: "Building resilient",
@@ -215,15 +229,6 @@ export function safeSetItem(key: string, value: string): boolean {
       window.localStorage.setItem(key, value);
       return true;
     } catch {
-      import("sweetalert2").then(({ default: Swal }) => {
-        Swal.fire({
-          title: "Storage limit reached",
-          text: "Browser localStorage quota exceeded. Please use hosted URLs for large files.",
-          icon: "error",
-          confirmButtonText: "Understood",
-        });
-      });
-      console.error("localStorage quota exceeded:", err);
       return false;
     }
   }
@@ -297,5 +302,5 @@ export function usePortfolioData() {
 }
 
 export const ADMIN_PASSWORD_KEY = "portfolio.admin.session.v1";
-export const ADMIN_EMAIL = "admin@example.com";
+export const ADMIN_EMAIL = "admin@protoflio.com";
 export const ADMIN_PASSWORD = "Ghtr123!@!@";
