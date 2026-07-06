@@ -8,7 +8,7 @@ import { SectionHeading } from "./Projects";
 import { Github, Linkedin, Mail, Send, CheckCircle2 } from "lucide-react";
 import { usePortfolioData } from "@/lib/portfolio-store";
 
-// 
+//
 function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -40,10 +40,11 @@ export function Contact() {
   const [sent, setSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const update = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [k]: e.target.value });
-    if (errors[k]) setErrors({ ...errors, [k]: undefined });
-  };
+  const update =
+    (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setForm({ ...form, [k]: e.target.value });
+      if (errors[k]) setErrors({ ...errors, [k]: undefined });
+    };
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,14 +61,13 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      
       const response = await fetch("https://formspree.io/f/xdarbkpo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json"
+          Accept: "application/json",
         },
-        body: JSON.stringify(result.data)
+        body: JSON.stringify(result.data),
       });
 
       if (response.ok) {
@@ -89,12 +89,13 @@ export function Contact() {
       <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[1fr_1.2fr]">
         <div className="min-w-0">
           <SectionHeading eyebrow="05 / Contact" title={data.contactHeading} />
-          <p className="mt-6 text-muted-foreground">
-            Open to junior roles.
+          <p className="mt-6 text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
+            Whether you are looking to scale an existing backend pipeline, build a decoupled
+            microservices architecture, or explore full-time engineering or full-stack opportunities  — my inbox is
+            always open.
           </p>
 
           <div className="mt-10 space-y-4">
-           
             <a
               href="https://wa.me/201127625785"
               target="_blank"
@@ -103,7 +104,9 @@ export function Contact() {
             >
               <WhatsAppIcon className="h-5 w-5 shrink-0 text-primary" />
               <div className="min-w-0 flex-1">
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">WhatsApp</div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                  WhatsApp
+                </div>
                 <div className="truncate font-mono text-sm">+20 112 762 5785</div>
               </div>
             </a>
@@ -126,7 +129,9 @@ export function Contact() {
             >
               <Linkedin className="h-5 w-5 shrink-0 text-primary" />
               <div className="min-w-0 flex-1">
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">LinkedIn</div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                  LinkedIn
+                </div>
                 <div className="truncate font-mono text-sm">{data.profile.linkedin}</div>
               </div>
             </a>
@@ -138,7 +143,9 @@ export function Contact() {
             >
               <Github className="h-5 w-5 shrink-0 text-primary" />
               <div className="min-w-0 flex-1">
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">GitHub</div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                  GitHub
+                </div>
                 <div className="truncate font-mono text-sm">{data.profile.github}</div>
               </div>
             </a>
@@ -171,9 +178,7 @@ export function Contact() {
                   aria-invalid={!!errors.name}
                   disabled={isSubmitting}
                 />
-                {errors.name && (
-                  <p className="mt-1.5 text-xs text-destructive">{errors.name}</p>
-                )}
+                {errors.name && <p className="mt-1.5 text-xs text-destructive">{errors.name}</p>}
               </div>
               <div>
                 <Label htmlFor="email">Email</Label>
@@ -188,9 +193,7 @@ export function Contact() {
                   aria-invalid={!!errors.email}
                   disabled={isSubmitting}
                 />
-                {errors.email && (
-                  <p className="mt-1.5 text-xs text-destructive">{errors.email}</p>
-                )}
+                {errors.email && <p className="mt-1.5 text-xs text-destructive">{errors.email}</p>}
               </div>
               <div>
                 <Label htmlFor="message">Message</Label>
@@ -218,9 +221,9 @@ export function Contact() {
           )}
         </form>
       </div>
-<footer suppressHydrationWarning className="text-center font-mono text-xs ...">
-  Designed and engineered by {data.profile.name} — {new Date().getFullYear()}
-</footer>
+      <footer suppressHydrationWarning className="text-center font-mono text-xs ...">
+        Designed and engineered by {data.profile.name} — {new Date().getFullYear()}
+      </footer>
     </section>
   );
 }
