@@ -205,15 +205,18 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
     if (res.isConfirmed) setDraft({ ...draft, skillGroups: draft.skillGroups.filter((g) => g.id !== id) });
   };
 
-  // Timeline mutators
+  
   const addTimeline = () => {
     const t: TimelineEntry = {
       id: `t-${Date.now()}`,
       year: new Date().getFullYear().toString(),
+      startDate: "",
+      endDate: "",
       title: "New entry",
       org: "",
       detail: "",
       kind: "work",
+      type: "Job",
     };
     setDraft({ ...draft, timeline: [...draft.timeline, t] });
   };

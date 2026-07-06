@@ -20,7 +20,7 @@ function useProjectVideo(projectId: string, fallbackUrl: string) {
 }
 
 export function Projects() {
-  const { data } = usePortfolioData();
+  const { data, hydrated } = usePortfolioData();
   const projects = data.projects;
   const [filter, setFilter] = useStackFilter();
 
@@ -33,6 +33,10 @@ export function Projects() {
     () => (filter ? projects.filter((p) => p.stack.includes(filter)) : projects),
     [filter, projects],
   );
+
+  if (!hydrated) {
+    return <div className="min-h-[400px] w-full animate-pulse bg-transparent" />;
+  }
 
   return (
     <section id="projects" className="px-4 py-24 sm:px-6 lg:px-16">
@@ -230,6 +234,7 @@ function relativeTime(iso: string) {
   return `${Math.floor(diff / (365 * day))}y ago`;
 }
 
+// تم تعديل وظيفة التشيك السحابي لتشمل Cloudinary بذكاء
 function isEmbeddable(url: string) {
   return /youtube\.com|youtu\.be|vimeo\.com/.test(url);
 }
