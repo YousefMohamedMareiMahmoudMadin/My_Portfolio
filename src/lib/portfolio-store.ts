@@ -55,7 +55,7 @@ export type PortfolioData = {
   cvFilename: string | null;
 };
 
-export const PROJECT_IDS = ["employee-management", "store-mvcsn", "url-shortener"] as const;
+export const PROJECT_IDS = ["employee-management", "store-mvcsn", "url-shortener", "educational-center"] as const;
 export type ProjectId = (typeof PROJECT_IDS)[number];
 
 const defaultProjects: Project[] = [
@@ -111,6 +111,23 @@ const defaultProjects: Project[] = [
       "301 Redirect + Analytics Log",
     ],
     videoUrl: "https://res.cloudinary.com/zeoypfid/video/upload/v1783309477/url_shortner_mx9quu.mp4",
+  },
+  {
+    id: "educational-center",
+    title: "Educational Center Platform",
+    summary:
+      "Full-featured web application built using ASP.NET Core Razor Pages, designed to manage academic operations, student tracking, and lesson planning efficiently.",
+    architecture: "Razor Pages — PageModel encapsulation, centralized database state, secure administrative dashboard",
+    stack: ["ASP.NET Core", "C#", "Razor Pages", "SQL Server", "Entity Framework"],
+    repo: "https://github.com/YousefMohamedMareiMahmoudMadin",
+    flow: [
+      "Razor Pages UI",
+      "PageModel Handlers",
+      "Centralized Operations Service",
+      "Entity Framework Core Context",
+      "SQL Server Relations",
+    ],
+    videoUrl: "https://res.cloudinary.com/zeoypfid/video/upload/v1783311220/courses_tekfem.mp4",
   },
 ];
 
@@ -199,14 +216,14 @@ export const defaultData: PortfolioData = {
     name: "Yousef Mohamed Marei Mahmoud",
     title: "Software Engineer | Node.js & .NET Developer | Full-Stack Web Applications",
     summary:
-      "I design and ship enterprise-grade platforms across the Node.js (MEAN/MERN) and Microsoft .NET ecosystems — with a focus on database performance, distributed architecture, and maintainable code that outlives the sprint that shipped it.",
+      "I am a results-driven Full-Stack Software Engineer specialized in structural architecture, database efficiency, and enterprise scalability across .NET and MEAN/MERN ecosystems. Bridging the gap between fluid, responsive user interfaces and highly performant backend systems, I engineer maintainable architectures built for long-term growth. My core expertise centers on designing scalable RESTful APIs, implementing robust security protocols, and managing optimized transactional data storage under high-concurrency loads.",
     email: "yousefmohamedmarei@gmail.com",
     linkedin: "https://www.linkedin.com/in/yousef-mohamed-4668173a7?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     github: "https://github.com/YousefMohamedMareiMahmoudMadin",
   },
-  heroHeadline: "Building resilient",
-  heroAccent: "backend systems",
-  heroTail: "that scale gracefully.",
+  heroHeadline: "Hi, I'm Yousef Mohamed",
+  heroAccent: "Backend Architect",
+  heroTail: "building resilient systems.",
   contactHeading: "Let's build something durable.",
   projects: defaultProjects,
   skillGroups: defaultSkillGroups,

@@ -30,12 +30,10 @@ export function Hero() {
           <span className="truncate">{data.profile.title}</span>
         </div>
 
-        
-        <h1 className="font-display text-2xl font-bold leading-[1.2] tracking-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl max-w-4xl">
-          {data.heroHeadline}
+        <h1 className="font-display text-3xl font-bold leading-[1.2] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl max-w-4xl">
+          {data.heroHeadline} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">| {data.heroAccent}</span>
         </h1>
 
-       
         <p className="mt-6 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
           {data.profile.summary}
         </p>
