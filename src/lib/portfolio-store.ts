@@ -216,7 +216,7 @@ export const defaultData: PortfolioData = {
     name: "Yousef Mohamed Marei Mahmoud",
     title: "Software Engineer | Node.js & .NET Developer | Full-Stack Web Applications",
     summary:
-      "I am a Software Engineer specialized in structural architecture, database efficiency, and enterprise scalability across .NET and MEAN/MERN ecosystems. Bridging the gap between fluid, responsive user interfaces and highly performant backend systems, I engineer maintainable architectures built for long-term growth. My core expertise centers on designing scalable RESTful APIs, implementing robust security protocols, and managing optimized transactional data storage under high-concurrency loads.",
+      "Software Engineer specialized in structural architecture, database efficiency, and enterprise scalability across .NET and MEAN/MERN ecosystems. Bridging the gap between fluid, responsive user interfaces and highly performant backend systems, I engineer maintainable architectures built for long-term growth. My core expertise centers on designing scalable RESTful APIs, implementing robust security protocols, and managing optimized transactional data storage under high-concurrency loads.",
     email: "yousefmohamedmarei@gmail.com",
     linkedin: "https://www.linkedin.com/in/yousef-mohamed-4668173a7?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     github: "https://github.com/YousefMohamedMareiMahmoudMadin",
